@@ -25,14 +25,31 @@ public class EstruturaDoWhile {
         */
         
         int numero;
-        int soma = 0;
+        int somaPares = 0, somaImpares = 0;
+        String listaNumerosPares = "";
+        String listaNumerosImpares = "";
+        String resposta;
         do {
             System.out.print("Informe um número inteiro(0 SAIR): ");
             numero = teclado.nextInt();
-            soma += numero;
-        } while ( numero != 0);
+            
+            if(numero % 2 == 0) {
+                somaPares += numero;               
+                listaNumerosPares += " " + numero;
+            } else {
+                somaImpares += numero;
+                listaNumerosImpares += " " + numero;
+            }
+                        
+            System.out.print("Deseja continuar? ");
+            resposta = teclado.next();
+        } while ( resposta.toUpperCase().equals("S"));
         
-        System.out.println("A soma dos números é: " + soma);
+        System.out.println("A soma dos números pares é: " + somaPares);
+        System.out.println("Os números pares são:" + listaNumerosPares);
+        System.out.println("");
+        System.out.println("A soma dos números ímpares é: " + somaImpares);
+        System.out.println("Os números ímpares são:" + listaNumerosImpares);
     }
     
 }
